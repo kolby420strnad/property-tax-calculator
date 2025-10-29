@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Property Tax Calculator</title>
+</head>
+<body style="font-family:Arial; text-align:center; margin-top:50px;">
+  <h2>Property Tax Increase Calculator</h2>
+
+  <label for="acres">Dryland Acres:</label>
+  <input type="number" id="acres" placeholder="Enter acres">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function calculate() {
+      let acres = parseFloat(document.getElementById('acres').value);
+      if (isNaN(acres)) {
+        document.getElementById('result').innerText = "Please enter a number.";
+        return;
+      }
+      let final = acres * 3.984;
+      document.getElementById('result').innerText =
+        `Estimated tax increase: $${final.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
